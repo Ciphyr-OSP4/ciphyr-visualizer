@@ -156,7 +156,7 @@ export default function LoginV2() {
                   "
                 </div>
                 {
-                  "cypher changed me..."
+                  "Ciphyr changed me..."
                 }
               </div>
               <div className="flex justify-end items-center ml-5 mt-6 top text-2xl text-slate-500 font-serif italic w-3/4">

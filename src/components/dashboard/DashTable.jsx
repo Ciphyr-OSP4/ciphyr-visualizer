@@ -14,6 +14,7 @@ export default function DashTable(props) {
   const [filtering, setFiltering] = useState("");
   const [columnFilters, setColumnFilters] = useState("");
   const [tableRows, setTableRows] = useState([]);
+  const [label, setLabel] = useState("");
 
   //One time on load of page render the instances logs
 
@@ -32,7 +33,7 @@ export default function DashTable(props) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          apiKey: "04ffad9d-73ed-4d44-9e6a-3cbf2db31d2b",
+          label: label,
         }),
       });
       if (!response.ok) {
@@ -127,6 +128,11 @@ export default function DashTable(props) {
     onGlobalFilterChanged: setFiltering,
   });
 
+  function getSelectionValue(selectObject) {
+    let value = selectObject.value;  
+    setLabel(value);
+    console.log(value);
+  }
   return (
     <div className="">
       <div className="">
@@ -137,6 +143,12 @@ export default function DashTable(props) {
           value={filtering}
           onChange={(e) => setFiltering(e.target.value)}
         />
+        <select
+          id="instanceList"
+          onChange={() => getSelectionValue(this)}>
+          <option value="cluster0">cluster0</option>
+          <option value="testInstance">testInstance</option>
+        </select>
       </div>
       <div className=" h-[850px] !important">
         <table className="w-[1600px] my-5 bg-white shadow-md table-fixed">
