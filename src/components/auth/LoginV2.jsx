@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import DashboardImage from "../../assets/Dashboard.png";
 import { useNavigate } from "react-router-dom";
+import ciphyrLogo from "../../assets/ciphyrLogo.png";
 
 export default function LoginV2() {
   const [email, setEmail] = useState("");
@@ -46,8 +47,8 @@ export default function LoginV2() {
         <div className="flex flex-col flex-1 bg-scale-100">
           <div className="absolute top-0 w-full px-8 pt-6 mx-auto">
             <nav className="relative flex justify-between">
-              <div>Ciphyr</div>
-              <div>light mode</div>
+              <img src={ciphyrLogo} className="w-[200px]"/>
+              <div>dark mode</div>
             </nav>
           </div>
           <div className="flex flex-1">
