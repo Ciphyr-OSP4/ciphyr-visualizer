@@ -28,3 +28,5 @@ CREATE TABLE log (
   FOREIGN KEY (api_key) REFERENCES instance (api_key),
   timestamp TIMESTAMP default NOW()
 );
+
+
